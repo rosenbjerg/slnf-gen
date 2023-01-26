@@ -10,8 +10,17 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>slnf-gen</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-
+        
+        <NeutralLanguage>en</NeutralLanguage>
+        <RepositoryType>GitHub</RepositoryType>
+        <RepositoryUrl>https://github.com/rosenbjerg/slnf-gen</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/rosenbjerg/slnf-gen</PackageProjectUrl>
+        <Copyright>Malte Rosenbjerg</Copyright>
+        <Description>A .NET tool for cleaning up and simplyfing usage of sln files</Description>
+        <Authors>Malte Rosenbjerg</Authors>
+        <PackageTags>sln solution cleanup clean simplify simple yaml tool</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
     </PropertyGroup>
 
     <ItemGroup>
