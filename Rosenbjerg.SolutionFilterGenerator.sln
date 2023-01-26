@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosenbjerg.SolutionFilterGenerator", "Rosenbjerg.SolutionFilterGenerator\Rosenbjerg.SolutionFilterGenerator.csproj", "{FF015DAB-A51B-4169-A93E-5975DB928809}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF015DAB-A51B-4169-A93E-5975DB928809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF015DAB-A51B-4169-A93E-5975DB928809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF015DAB-A51B-4169-A93E-5975DB928809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF015DAB-A51B-4169-A93E-5975DB928809}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
