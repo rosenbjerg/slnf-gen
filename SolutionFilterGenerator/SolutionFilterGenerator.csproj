@@ -20,7 +20,6 @@
         <Authors>Malte Rosenbjerg</Authors>
         <PackageTags>sln solution cleanup clean simplify simple yaml tool</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-
     </PropertyGroup>
 
     <ItemGroup>

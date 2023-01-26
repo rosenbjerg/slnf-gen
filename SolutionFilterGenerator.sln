@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rosenbjerg.SolutionFilterGenerator", "Rosenbjerg.SolutionFilterGenerator\Rosenbjerg.SolutionFilterGenerator.csproj", "{FF015DAB-A51B-4169-A93E-5975DB928809}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionFilterGenerator", "SolutionFilterGenerator\SolutionFilterGenerator.csproj", "{FF015DAB-A51B-4169-A93E-5975DB928809}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

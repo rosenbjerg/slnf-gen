@@ -1,3 +1,3 @@
-namespace Rosenbjerg.SolutionFilterGenerator.Models;
+namespace SolutionFilterGenerator.Models;
 
 public record Solution(string Path, string[] Projects);

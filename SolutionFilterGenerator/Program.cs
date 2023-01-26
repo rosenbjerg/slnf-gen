@@ -2,7 +2,7 @@
 using System.Text.Json;
 using Microsoft.Build.Construction;
 using Microsoft.Extensions.FileSystemGlobbing;
-using Rosenbjerg.SolutionFilterGenerator.Models;
+using SolutionFilterGenerator.Models;
 
 var solutionFileArgument = new Argument<FileInfo>(name: "path to sln", description: "File path to the solution (.sln) file");
 var excludeOption = new Option<string[]>(name: "--exclude", description: "Exclusion glob(s)");
