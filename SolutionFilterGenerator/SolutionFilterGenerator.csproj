@@ -16,9 +16,9 @@
         <RepositoryUrl>https://github.com/rosenbjerg/slnf-gen</RepositoryUrl>
         <PackageProjectUrl>https://github.com/rosenbjerg/slnf-gen</PackageProjectUrl>
         <Copyright>Malte Rosenbjerg</Copyright>
-        <Description>A .NET tool for cleaning up and simplyfing usage of sln files</Description>
+        <Description>A dotnet tool for generating solution filter (.slnf) files based on globs</Description>
         <Authors>Malte Rosenbjerg</Authors>
-        <PackageTags>sln solution cleanup clean simplify simple yaml tool</PackageTags>
+        <PackageTags>slnf glob sln filter solution dotnet tool</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
