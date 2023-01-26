@@ -12,10 +12,10 @@ var includeOption = new Option<string[]>(name: "--include", description: "Inclus
 includeOption.SetDefaultValue(new[] { "**/*" });
 includeOption.AddAlias("-i");
 
-var outputOption = new Option<string?>(name: "--output-path", description: "Optional path of output .slnf file. Defaults to same as .sln file");
+var outputOption = new Option<string?>(name: "--output-path", description: "Optional path of output .slnf file. Defaults to same directory and file name as .sln file but different file extension");
 outputOption.AddAlias("-o");
 
-var rootCommand = new RootCommand("Solution filter generator") { Name = "slnf-gen" };
+var rootCommand = new RootCommand("Solution filter generator\nExample of excluding test projects: 'slnf-gen MySolution.sln --exclude **/*Test*' which creates MySolution.slnf") { Name = "slnf-gen" };
 rootCommand.AddArgument(solutionFileArgument);
 rootCommand.AddOption(excludeOption);
 rootCommand.AddOption(includeOption);
