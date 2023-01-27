@@ -10,6 +10,7 @@
         <PackAsTool>true</PackAsTool>
         <ToolCommandName>slnf-gen</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
+        <PackageVersion>1.0.1</PackageVersion>
         
         <NeutralLanguage>en</NeutralLanguage>
         <RepositoryType>GitHub</RepositoryType>

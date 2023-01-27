@@ -25,7 +25,7 @@ rootCommand.SetHandler((solutionFile, includes, excludes, outputPath) =>
     {
         var matcher = new Matcher();
         if (!includes.Any())
-            matcher.AddInclude("**/*");
+            matcher.AddInclude("**/*.*");
         matcher.AddIncludePatterns(includes);
         matcher.AddExcludePatterns(excludes);
         
