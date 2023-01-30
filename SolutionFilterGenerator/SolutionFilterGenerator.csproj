@@ -5,12 +5,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
         <PackAsTool>true</PackAsTool>
+        <IsPackable>true</IsPackable>
         <ToolCommandName>slnf-gen</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <PackageVersion>1.0.1</PackageVersion>
+        <PackageVersion>1.0.2</PackageVersion>
         
         <NeutralLanguage>en</NeutralLanguage>
         <RepositoryType>GitHub</RepositoryType>
