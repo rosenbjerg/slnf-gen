@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionFilterGenerator", "SolutionFilterGenerator\SolutionFilterGenerator.csproj", "{FF015DAB-A51B-4169-A93E-5975DB928809}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionFilterGenerator.Tests", "SolutionFilterGenerator.Tests\SolutionFilterGenerator.Tests.csproj", "{7964621F-B65D-4A00-A224-C979C1D47D39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{FF015DAB-A51B-4169-A93E-5975DB928809}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF015DAB-A51B-4169-A93E-5975DB928809}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF015DAB-A51B-4169-A93E-5975DB928809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7964621F-B65D-4A00-A224-C979C1D47D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7964621F-B65D-4A00-A224-C979C1D47D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7964621F-B65D-4A00-A224-C979C1D47D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7964621F-B65D-4A00-A224-C979C1D47D39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
