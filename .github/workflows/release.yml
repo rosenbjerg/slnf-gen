@@ -1,0 +1,23 @@
+name: NuGet release
+on:
+  push:
+    branches:
+      - release
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Prepare .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'
+        
+    - name: Build solution
+      run: dotnet pack SolutionFilterGenerator.sln --output build -c Release
+      
+    - name: Publish NuGet package
+      run: dotnet nuget push build/*.nupkg --source nuget.org --api-key ${{ secrets.NUGET_TOKEN }}
+      
