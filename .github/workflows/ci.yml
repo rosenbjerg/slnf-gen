@@ -36,7 +36,8 @@ jobs:
     - name: Test with dotnet
       run: dotnet test SolutionFilterGenerator.sln  --collect "XPlat Code Coverage" --logger GitHubActions
 
-    - name: Upload coverage reports to Codecov
+    - if: matrix.os == 'ubuntu-latest'
+      name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       with:
         directory: SolutionFilterGenerator.Tests/TestResults
