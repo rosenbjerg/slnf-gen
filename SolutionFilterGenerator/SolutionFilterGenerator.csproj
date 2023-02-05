@@ -11,6 +11,7 @@
         <ToolCommandName>slnf-gen</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <PackageVersion>1.0.2</PackageVersion>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
         
         <NeutralLanguage>en</NeutralLanguage>
         <RepositoryType>GitHub</RepositoryType>
@@ -27,6 +28,10 @@
       <PackageReference Include="Microsoft.Build" Version="17.3.2" />
       <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="7.0.0" />
       <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
 </Project>

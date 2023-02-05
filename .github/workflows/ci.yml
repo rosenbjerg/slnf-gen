@@ -1,6 +1,13 @@
 name: CI
 
 on:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/ci.yml
+      - SolutionFilterGenerator/**
+      - SolutionFilterGenerator.Test/**
   pull_request:
     branches:
       - main
@@ -28,3 +35,9 @@ jobs:
 
     - name: Test with dotnet
       run: dotnet test SolutionFilterGenerator.sln --logger GitHubActions
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        directory: SolutionFilterGenerator.Tests/TestResults
+        fail_ci_if_error: true
