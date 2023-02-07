@@ -17,5 +17,4 @@ Options:
   -o, --output-path <output-path>  Optional path of output .slnf file. Defaults to same directory and file name as .sln file but different file extension
   --version                        Show version information
   -?, -h, --help                   Show help and usage information
-
 ```
