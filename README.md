@@ -1,5 +1,7 @@
 # A dotnet tool for generating solution filter (.slnf) files based on globs
 
+[![NuGet Badge](https://buildstats.info/nuget/SolutionFilterGenerator)](https://www.nuget.org/packages/SolutionFilterGenerator/)
+
 ```
 Description:
   Solution filter generator
