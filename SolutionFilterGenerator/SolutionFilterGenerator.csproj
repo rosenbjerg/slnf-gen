@@ -10,7 +10,7 @@
         <IsPackable>true</IsPackable>
         <ToolCommandName>slnf-gen</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <PackageVersion>1.0.2</PackageVersion>
+        <PackageVersion>1.0.3</PackageVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         
         <NeutralLanguage>en</NeutralLanguage>
