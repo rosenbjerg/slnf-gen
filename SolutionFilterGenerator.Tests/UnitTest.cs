@@ -1,6 +1,8 @@
 using System;
+using System.CommandLine;
 using System.IO;
 using System.Linq;
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using NUnit.Framework;
 
 namespace SolutionFilterGenerator.Tests;
@@ -42,5 +44,13 @@ public class Tests
         var slnf = FilterGenerator.Generate(_solutionFile, new []{ "**/*Test*" }, Array.Empty<string>(), null);
         Assert.True(slnf.Solution.Projects.All(p => p.Contains("Test")));
         Assert.AreEqual(1, slnf.Solution.Projects.Length);
+    }
+
+    [Test]
+    public void CanInvokeWithOnlySln()
+    {
+        var command = new CreateFilterCommand();
+        var parsed = command.Parse("test.sln");
+        Assert.IsEmpty(parsed.Errors);
     }
 }
