@@ -23,6 +23,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
+        sdk: [6.0.x, 7.0.x]
         
     steps:
     - name: Checkout
@@ -31,12 +32,12 @@ jobs:
     - name: Prepare .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '7.0.x'
+        dotnet-version: ${{ matrix.sdk }}
 
     - name: Test with dotnet
       run: dotnet test SolutionFilterGenerator.sln  --collect "XPlat Code Coverage" --logger GitHubActions
 
-    - if: matrix.os == 'ubuntu-latest'
+    - if: matrix.os == 'ubuntu-latest' && matrix.sdk == '7.0.x'
       name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       with:
