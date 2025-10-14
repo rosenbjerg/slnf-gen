@@ -20,7 +20,10 @@ public static class FilterGenerator
             .Select(p => p.Path)
             .ToArray();
 
-        var relativeSlnPath = Path.GetRelativePath(outputPath ?? solutionFile.DirectoryName!, solutionFile.FullName);
+        var relativeTo = outputPath is null or ""
+            ? solutionFile.DirectoryName!
+            : new FileInfo(outputPath).DirectoryName ?? solutionFile.DirectoryName!; 
+        var relativeSlnPath = Path.GetRelativePath(relativeTo, solutionFile.FullName);
         return new SolutionFilter(new Solution(relativeSlnPath, filteredProjects));
     }
 }
