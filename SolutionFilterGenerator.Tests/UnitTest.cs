@@ -20,30 +20,30 @@ public class Tests
     [Test]
     public void DefaultIncludesAll()
     {
-        var slnf = FilterGenerator.Generate(_solutionFile, Array.Empty<string>(), Array.Empty<string>(), null);
-        Assert.AreEqual(2, slnf.Solution.Projects.Length);
+        var slnf = FilterGenerator.Generate(_solutionFile, [], [], null);
+        Assert.That(slnf.Solution.Projects.Length, Is.EqualTo(2));
     }
     [Test]
     public void ExcludeAll()
     {
-        var slnf = FilterGenerator.Generate(_solutionFile, Array.Empty<string>(), new []{ "**/*" }, null);
-        Assert.AreEqual(0, slnf.Solution.Projects.Length);
+        var slnf = FilterGenerator.Generate(_solutionFile, [], ["**/*"], null);
+        Assert.That(slnf.Solution.Projects.Length, Is.Zero);
     }
 
     [Test]
     public void ExcludeTests()
     {
-        var slnf = FilterGenerator.Generate(_solutionFile, Array.Empty<string>(), new []{ "**/*Test*" }, null);
-        Assert.True(slnf.Solution.Projects.All(p => !p.Contains("Test")));
-        Assert.AreEqual(1, slnf.Solution.Projects.Length);
+        var slnf = FilterGenerator.Generate(_solutionFile, [], ["**/*Test*"], null);
+        Assert.That(slnf.Solution.Projects.All(p => !p.Contains("Test")), Is.True);
+        Assert.That(slnf.Solution.Projects.Length, Is.EqualTo(1));
     }
 
     [Test]
     public void IncludeOnlyTests()
     {
-        var slnf = FilterGenerator.Generate(_solutionFile, new []{ "**/*Test*" }, Array.Empty<string>(), null);
-        Assert.True(slnf.Solution.Projects.All(p => p.Contains("Test")));
-        Assert.AreEqual(1, slnf.Solution.Projects.Length);
+        var slnf = FilterGenerator.Generate(_solutionFile, ["**/*Test*"], [], null);
+        Assert.That(slnf.Solution.Projects.All(p => p.Contains("Test")), Is.True);
+        Assert.That(slnf.Solution.Projects.Length, Is.EqualTo(1));
     }
 
     [Test]
@@ -51,6 +51,6 @@ public class Tests
     {
         var command = new CreateFilterCommand();
         var parsed = command.Parse("test.sln");
-        Assert.IsEmpty(parsed.Errors);
+        Assert.That(parsed.Errors, Is.Empty);
     }
 }
