@@ -10,7 +10,7 @@
         <IsPackable>true</IsPackable>
         <ToolCommandName>slnf-gen</ToolCommandName>
         <PackageOutputPath>./nupkg</PackageOutputPath>
-        <PackageVersion>1.1.0</PackageVersion>
+        <PackageVersion>1.2.0</PackageVersion>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         
         <NeutralLanguage>en</NeutralLanguage>
@@ -20,7 +20,7 @@
         <Copyright>Malte Rosenbjerg</Copyright>
         <Description>A dotnet tool for generating solution filter (.slnf) files based on globs</Description>
         <Authors>Malte Rosenbjerg</Authors>
-        <PackageTags>slnf glob sln filter solution dotnet tool</PackageTags>
+        <PackageTags>slnf glob sln slnx filter solution dotnet tool</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
