@@ -1,8 +1,6 @@
-using System;
-using System.CommandLine;
 using System.IO;
 using System.Linq;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace SolutionFilterGenerator.Tests;
@@ -23,6 +21,7 @@ public class Tests
         var slnf = FilterGenerator.Generate(_solutionFile, [], [], null);
         Assert.That(slnf.Solution.Projects.Length, Is.EqualTo(2));
     }
+
     [Test]
     public void ExcludeAll()
     {
@@ -52,5 +51,27 @@ public class Tests
         var command = new CreateFilterCommand();
         var parsed = command.Parse("test.sln");
         Assert.That(parsed.Errors, Is.Empty);
+    }
+
+    [Test]
+    public async Task VerifyFullInvokeWithExclude()
+    {
+        var command = new CreateFilterCommand();
+        var tempFile = Path.GetTempFileName();
+
+        try
+        {
+            var parsed = command.Parse($"{_solutionFile.FullName} -e **/*Test* -o {tempFile}");
+            var result = await parsed.InvokeAsync();
+            var slnfContent = await File.ReadAllTextAsync(tempFile);
+
+            Assert.That(result, Is.EqualTo(0));
+            Assert.That(slnfContent, Contains.Substring("SolutionFilterGenerator/SolutionFilterGenerator.csproj"));
+            Assert.That(slnfContent, Does.Not.Contain("SolutionFilterGenerator/SolutionFilterGenerator.Tests.csproj"));
+        }
+        finally
+        {
+            File.Delete(tempFile);
+        }
     }
 }
