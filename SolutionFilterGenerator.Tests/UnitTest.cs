@@ -61,7 +61,7 @@ public class Tests
 
         try
         {
-            var parsed = command.Parse($"{_solutionFile.FullName} -e **/*Test* -o {tempFile}");
+            var parsed = command.Parse([_solutionFile.FullName, "-e", "**/*Test*", "-o", tempFile]);
             var result = await parsed.InvokeAsync();
             var slnfContent = await File.ReadAllTextAsync(tempFile);
 
