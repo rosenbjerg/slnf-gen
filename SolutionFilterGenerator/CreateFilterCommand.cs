@@ -45,7 +45,7 @@ public class CreateFilterCommand : RootCommand
         Add(outputOption);
 
         SetAction(result => Handle(result.GetRequiredValue(solutionFileArgument), result.GetRequiredValue(includeOption),
-            result.GetRequiredValue(excludeOption), result.GetRequiredValue(outputOption)));
+            result.GetRequiredValue(excludeOption), result.GetValue(outputOption)));
     }
 
     private void Handle(FileInfo solutionFile, string[] includes, string[] excludes, string? outputPath)
