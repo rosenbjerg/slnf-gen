@@ -3,7 +3,7 @@
 [![NuGet Badge](https://buildstats.info/nuget/SolutionFilterGenerator)](https://www.nuget.org/packages/SolutionFilterGenerator/)
 [![codecov](https://codecov.io/gh/rosenbjerg/slnf-gen/branch/main/graph/badge.svg)](https://codecov.io/gh/rosenbjerg/slnf-gen)
 
-Easily create a solution filter to avoid restoring more than necessary 
+Easily create a solution filter to avoid restoring more than necessary
 
 ## Usage example
 

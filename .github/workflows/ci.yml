@@ -13,34 +13,34 @@ on:
       - main
       - release
     paths:
-    - .github/workflows/ci.yml
-    - SolutionFilterGenerator/**
-    - SolutionFilterGenerator.Test/**
+      - .github/workflows/ci.yml
+      - SolutionFilterGenerator/**
+      - SolutionFilterGenerator.Test/**
 
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest, macos-latest]
-        sdk: [6.0.x, 8.0.x, 9.0.x]
-        
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+        sdk: [ 6.0.x, 8.0.x, 9.0.x ]
+    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Prepare .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: ${{ matrix.sdk }}
+      - name: Prepare .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.sdk }}
 
-    - name: Test with dotnet
-      run: dotnet test SolutionFilterGenerator.sln  --collect "XPlat Code Coverage" --logger GitHubActions
+      - name: Test with dotnet
+        run: dotnet test SolutionFilterGenerator.sln  --collect "XPlat Code Coverage" --logger GitHubActions
 
-    - if: matrix.os == 'ubuntu-latest' && matrix.sdk == '9.0.x'
-      name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
-      with:
-        directory: SolutionFilterGenerator.Tests/TestResults
-        fail_ci_if_error: true
-        token: ${{ secrets.CODECOV_TOKEN }}
+      - if: matrix.os == 'ubuntu-latest' && matrix.sdk == '9.0.x'
+        name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: SolutionFilterGenerator.Tests/TestResults
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
