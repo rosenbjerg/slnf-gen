@@ -19,19 +19,24 @@ public class CreateFilterCommand : RootCommand
         var excludeOption = new Option<string[]>("--exclude", "-e")
         {
             Description = "Exclusion glob(s)",
-            DefaultValueFactory = _ => []
+            DefaultValueFactory = _ => [],
+            Arity = ArgumentArity.ZeroOrMore,
+            AllowMultipleArgumentsPerToken = true
         };
 
         var includeOption = new Option<string[]>("--include", "-i")
         {
             Description = "Inclusion glob(s)",
-            DefaultValueFactory = _ => ["**/*"]
+            DefaultValueFactory = _ => ["**/*"],
+            Arity = ArgumentArity.ZeroOrMore,
+            AllowMultipleArgumentsPerToken = true
         };
 
         var outputOption = new Option<string?>("--output-path", "-o")
         {
             Description = "Optional path of output .slnf file. Defaults to same directory and file name as .sln file but different file extension",
-            DefaultValueFactory = _ => null
+            DefaultValueFactory = _ => null,
+            Arity = ArgumentArity.ZeroOrOne
         };
 
         Add(solutionFileArgument);
