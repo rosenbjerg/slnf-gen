@@ -1,5 +1,5 @@
-﻿using System.CommandLine;
-using SolutionFilterGenerator;
+﻿using SolutionFilterGenerator;
 
 var rootCommand = new CreateFilterCommand();
-return await rootCommand.InvokeAsync(args);
+var parsed = rootCommand.Parse(args);
+return await parsed.InvokeAsync();
